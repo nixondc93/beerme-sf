@@ -1,0 +1,27 @@
+{
+  "name": "beerme-sf",
+  "version": "1.0.0",
+  "description": "Project 1",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.8",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nixondc93/beerme-sf.git"
+  },
+  "author": "Emily",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nixondc93/beerme-sf/issues"
+  },
+  "homepage": "https://github.com/nixondc93/beerme-sf#readme"
+}
