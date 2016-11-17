@@ -1,0 +1,29 @@
+{
+  "name": "beerme-sf",
+  "version": "1.0.0",
+  "description": "Project-1 BeerMe",
+  "main": "seed.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nixondc93/beerme-sf.git"
+  },
+  "keywords": [
+    "project-1",
+    "BeerMe"
+  ],
+  "author": "Derry, Emily",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nixondc93/beerme-sf/issues"
+  },
+  "homepage": "https://github.com/nixondc93/beerme-sf#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "handlebars": "^4.0.6",
+    "mongoose": "^4.6.8"
+  }
+}
