@@ -1,6 +1,7 @@
 {
   "name": "beerme-sf",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "Project 1",
   "main": "server.js",
   "dependencies": {
@@ -10,6 +11,10 @@
     "nodemon": "^1.11.0"
   },
   "devDependencies": {},
+=======
+  "description": "Project-1 BeerMe",
+  "main": "seed.js",
+>>>>>>> 3c5df3f40184fbf6f509a9df3a3847c5d7c1c300
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -18,10 +23,27 @@
     "type": "git",
     "url": "git+https://github.com/nixondc93/beerme-sf.git"
   },
+<<<<<<< HEAD
   "author": "Emily",
+=======
+  "keywords": [
+    "project-1",
+    "BeerMe"
+  ],
+  "author": "Derry, Emily",
+>>>>>>> 3c5df3f40184fbf6f509a9df3a3847c5d7c1c300
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nixondc93/beerme-sf/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/nixondc93/beerme-sf#readme"
+=======
+  "homepage": "https://github.com/nixondc93/beerme-sf#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "handlebars": "^4.0.6",
+    "mongoose": "^4.6.8"
+  }
+>>>>>>> 3c5df3f40184fbf6f509a9df3a3847c5d7c1c300
 }
