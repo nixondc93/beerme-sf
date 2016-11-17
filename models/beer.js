@@ -6,7 +6,7 @@ var BeerSchema = new Schema({
   description: String,
   rating: Number,
   Brewery: String,
-  location: Relationship.something  //referncing Relationship model to find locations
+  location: relationship.something  //referncing Relationship model to find locations
   abv: String
 });
 
