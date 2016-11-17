@@ -5,8 +5,14 @@ var Location = require('./location');
 
 var RelationshipSchema = new Schema({
 
-  beer: Beer._id,
-  location: Location._id
+	_beer: {
+		type: Schema.types.ObjectId,
+		ref: "Beer"
+	},
+	_location: {
+		type: Schema.types.ObjectId,
+		ref: "Location"
+	},
 
 });
 
