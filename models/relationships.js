@@ -10,6 +10,6 @@ var RelationshipSchema = new Schema({
 
 });
 
-var Relationship = mongoose.model('Relationships', RelationshipSchema);
+var Relationship = mongoose.model('Relationship', RelationshipSchema);
 
 module.exports = Relationship;
