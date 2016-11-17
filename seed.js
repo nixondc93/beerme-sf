@@ -1,6 +1,7 @@
 var db = require('./models'),
 	Beer = db.Beer,
-	Location = db.Location;
+	Location = db.Location,
+	Relationship = db.Relationship;
 
 
 var beers = [
@@ -35,18 +36,50 @@ var locations = [
 }
 ]
 
-
-Beer.create(beers, function hoorayForBeer(err, succ) {
+Beer.remove({}, function goodByeBeerss(err, succ) {
 	if (err) {
 		return console.log("ERR: ", err);
 	}
-	console.log(succ.length + " beers made");
-});
+	console.log("All beers drank");
 
-Location.create(locations, function letsAllDrink(err, succ) {
-	if (err) {
-		return console.log("ERR: ", err);
-	}
-	console.log(succ.length + " locations made");
+	Location.remove({}, function goodByeLocations(err, succ) {
+		if (err) {
+			return console.log("ERR: ", err);
+		}
+		console.log("All locations demolished");
 
+		Beer.create(beers, function hoorayForBeer(err, succBeers) {
+			if (err) {
+				return console.log("ERR: ", err);
+			}
+			console.log(succ.length + " beers made");
+			Location.create(locations, function letsAllDrink(err, succ) {
+				if (err) {
+					return console.log("ERR: ", err);
+				}
+				console.log(succ.length + " locations made");
+
+
+				Location.findOne({
+					Name: "Toronado"
+				}, function foundABar(err, foundBar) {
+					var newRelationship = {
+						_location: foundBar._id,
+						_beer: succBeers[0]._id
+					}
+					Relationship.create(newRelationship, function beerIsAtBar(err, fwendz) {
+						if (err) {
+							return console.log("ERR: ", err);
+						}
+						console.log("New Relationship created: ", fwendz);
+					});
+
+
+				});
+			});
+
+
+
+		});
+	});
 });
