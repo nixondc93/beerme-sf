@@ -5,4 +5,4 @@ mongoose.connect("mongodb://localhost/beer-mesf");
 
 module.exports.Beer = require('./beer');
 module.exports.Location = require('./location');
-// module.exports.Relationship = require('./relationships');
+// module.exports.Relationship = require('./relationship');

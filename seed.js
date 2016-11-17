@@ -52,7 +52,7 @@ Beer.remove({}, function goodByeBeerss(err, succ) {
 			if (err) {
 				return console.log("ERR: ", err);
 			}
-			console.log(succ.length + " beers made");
+			console.log(succBeers.length + " beers made");
 			Location.create(locations, function letsAllDrink(err, succ) {
 				if (err) {
 					return console.log("ERR: ", err);
