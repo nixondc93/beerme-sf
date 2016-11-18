@@ -38,7 +38,6 @@ function getBeersSucc(json){
 
 
 ///////////get locations ajax functions///////////////
-
 function getlocationsErr(err){
   console.error(error);
 }
@@ -55,6 +54,6 @@ function getlocationsSucc(json){
  function render(json, html, target) {
    console.log('rendering', json);
    var hbTemplate = Handlebars.compile(html.html());
-   var html = hbTemplate(json);
-   target.prepend(html);
+   var htmlData = hbTemplate(json);
+   target.prepend(htmlData);
  }

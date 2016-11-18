@@ -1,5 +1,5 @@
 .container{
-  margin-top: 20px;
+  margin-top:;
   width: 85%;
 }
 
@@ -12,11 +12,11 @@
   top:
 }
 
-.add-beer{
+/*.add-beer{
   display: block;
-  margin-right: 8px;
+  margin: 8px;
 }
 .add-location{
   display: block;
   margin: 12px
-}
+}*/
