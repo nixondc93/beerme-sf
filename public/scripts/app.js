@@ -1,7 +1,7 @@
 $(document).ready(function(){
   console.log('sanity check');
    $('.carousel').carousel();
-  //  console.log($.get())
+
   //  $.get('/api/beer').success(function(beers) {
   //   beers.forEach(function(beer) {
   //     renderBeer(beer);
@@ -38,7 +38,6 @@ function getBeersSucc(json){
 
 
 ///////////get locations ajax functions///////////////
-
 function getlocationsErr(err){
   console.error(error);
 }
@@ -56,5 +55,6 @@ function getlocationsSucc(json){
    console.log('rendering', json);
    var hbTemplate = Handlebars.compile(html.html());
    var html = hbTemplate(json);
+   target.empty();
    target.prepend(html);
  }

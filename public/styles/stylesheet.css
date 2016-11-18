@@ -9,12 +9,14 @@
 }
 
 .search-icon{
-  top: 
+  top:
 }
 
 .add-beer{
-  margin: 8px;
+  display: block;
+  margin-right: 8px;
 }
 .add-location{
+  display: block;
   margin: 12px
 }
