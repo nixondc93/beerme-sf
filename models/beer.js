@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var BeerSchema = new Schema({
   description: String,
   rating: Number,
-  Brewery: String,
+  brewery: String,
   // location:   //referncing Relationship model to find locations
   abv: String
 });

@@ -1,49 +1,86 @@
-var db = require("./models");
+var db = require('./models'),
+	Beer = db.Beer,
+	Location = db.Location,
+	Relationship = db.Relationship;
 
-var beerList = [{
-    name: "Super Beer",
-    description: "The most delicious beer",
-    rating: 4,
-    Brewery: "Your Mom's Brewery",
-    abv: "8.6%"
-}, {
-    name: "Mega Beer",
-    description: "The most delicious beer",
-    rating: 5,
-    Brewery: "Your Dad's Brewery",
-    abv: "9.6%"
-}, {
-    name: "Mondo Beer",
-    description: "The most delicious beer",
-    rating: 5,
-    Brewery: "Your Sister's Brewery",
-    abv: "9.8%"
-}, {
-    name: "Ultra Beer",
-    description: "The most delicious beer",
-    rating: 5,
-    Brewery: "Your Brother's Brewery",
-    abv: "8.6%"
-}];
 
-var locationList = [{
-    Name: "Beer Store",
-    TypeOf: "Liquor Store",
-    Address: "123 place place place SF",
-    phone: "123-456-7890"
-}, {
-    Name: "Beer Stop",
-    TypeOf: "Corner Store",
-    Address: "123 place place place SF",
-    phone: "123-456-7890"
-}, {
-    Name: "Beer Mall",
-    TypeOf: "Liquor Store",
-    Address: "123 place place place SF",
-    phone: "123-456-7890"
-}, {
-    Name: "Beer 'n Things'",
-    TypeOf: "Corner Store",
-    Address: "123 place place place SF",
-    phone: "123-456-7890"
-}];
+var beers = [
+	{
+		description: "PBR",
+		rating: 10,
+		Brewery: "PBR Brewing",
+		abv: "4.5"
+  },
+	{
+		description: "Schlitz",
+		rating: 2,
+		Brewery: "God Awful Brewing, Co.",
+		abv: "6.5"
+  },
+	{
+		description: "Pliny The Elder",
+		rating: 99,
+		Brewery: "Russian River Brewing Company",
+		abv: "8.0"
+  }
+]
+
+var locations = [
+	{
+		latitude: 142,
+		longitude: 37.6,
+		Name: "Toronado",
+		TypeOf: "Bar",
+		Address: "Haight Street",
+		phone: "415-555-0942"
+}
+]
+
+Beer.remove({}, function goodByeBeerss(err, succ) {
+	if (err) {
+		return console.log("ERR: ", err);
+	}
+	console.log("All beers drank");
+
+	Location.remove({}, function goodByeLocations(err, succ) {
+		if (err) {
+			return console.log("ERR: ", err);
+		}
+		console.log("All locations demolished");
+
+		Beer.create(beers, function hoorayForBeer(err, succBeers) {
+			if (err) {
+				return console.log("ERR: ", err);
+			}
+			console.log(succBeers.length + " beers made");
+			Location.create(locations, function letsAllDrink(err, succ) {
+				if (err) {
+					return console.log("ERR: ", err);
+				}
+				console.log(succ.length + " locations made");
+
+
+				Location.findOne({
+					Name: "Toronado"
+				}, function foundABar(err, foundBar) {
+					var newRelationship = {
+						_location: foundBar._id,
+						_beer: succBeers[0]._id
+					}
+					Relationship.create(newRelationship, function beerIsAtBar(err, fwendz) {
+						if (err) {
+							return console.log("ERR: ", err);
+						}
+						console.log("New Relationship created: ", fwendz);
+					});
+
+
+				});
+			});
+
+
+
+		});
+	});
+});
+>>>>>>> 43f569de8d9fc72b9ca450179ba9a35c6a599a7f

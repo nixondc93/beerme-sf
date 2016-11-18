@@ -8,7 +8,7 @@ var LocationSchema = new Schema({
   Name: String,
   TypeOf: String,
   Address: String,
-  Beer: Relationship.something, //referncing Relationship model to Beers
+  // Beer: Relationship.something, //referncing Relationship model to Beers
   phone: String
   // open: Boolean
 });
