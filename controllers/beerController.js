@@ -10,16 +10,19 @@ function index(req, res) {
     }
     res.json(allBeers)
   });
-
-
 }
 
 function create(req, res) {
-    // db.Beers.create()
+  db.Beer.create(rep.body, function(err, beerData){
+    if(err){
+      console.error(err);
+    }
+    res.json(beerData);
+  });
 }
 
 function show(req, res) {
-  db.Beer.findOne({ _id: req.params.id }, function (err, oneBeer){
+  db.Beer.findById(req.params._id, function (err, oneBeer){
     if(err){
       console.error(err);
     }
@@ -29,7 +32,13 @@ function show(req, res) {
 }
 
 function destroy(req, res) {
-
+  db.Beer.findOneAndRemove({_id: id}, function(err, deletedBeer){
+    if(err){
+      console.error(err);
+    }
+      console.log('deleted');
+      res.json(deletedBeer);
+  });
 }
 
 function update(req, res) {

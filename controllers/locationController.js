@@ -13,12 +13,18 @@ function index(req, res) {
 }
 
 function create(req, res) {
+  db.Location.create(rep.body, function(err, locationData){
+    if(err){
+      console.error(err);
+    }
+    res.json(locationData);
+  });
 
 
 }
 
 function show(req, res) {
-  db.findOne({_id: req.params.id}, function(err, oneLocation){
+  db.Location.findById(req.params._id, function(err, oneLocation){
     if(err){
       console.error(err);
     }
@@ -28,6 +34,13 @@ function show(req, res) {
 }
 
 function destroy(req, res) {
+  db.Location.findOneAndRemove({_id: id}, function(err, deletedLocation){
+    if(err){
+      console.error(err);
+    }
+      console.log('deleted');
+      res.json(deletedLocation);
+  });
 
 }
 

@@ -67,11 +67,11 @@ Beer.remove({}, function goodByeBeerss(err, succ) {
 						_location: foundBar._id,
 						_beer: succBeers[0]._id
 					}
-					Relationship.create(newRelationship, function beerIsAtBar(err, fwendz) {
+					Relationship.create(newRelationship, function beerIsAtBar(err, connected) {
 						if (err) {
 							return console.log("ERR: ", err);
 						}
-						console.log("New Relationship created: ", fwendz);
+						console.log("New Relationship created: ", connected);
 					});
 
 

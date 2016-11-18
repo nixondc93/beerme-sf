@@ -13,7 +13,14 @@ function create(req, res) {
 }
 
 function show(req, res) {
-
+  db.Relationship.find({_beer : req.prams._id}, function(err, beerLocations){
+    beerLocations.populate('_location')
+    .populate('_beer')
+    .exec(function iFoundIt(err, foundRel) {
+      console.log("Relationship Populated: ", foundRel);
+      process.exit();
+    });
+  });
 }
 
 function destroy(req, res) {

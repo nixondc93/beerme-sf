@@ -31,17 +31,21 @@ app.get('/', function homepage (req, res) {
 /*
  * JSON API Endpoints
  */
- 
+
  //beer routes
 app.get('/api/beer', controllers.beer.index);
-app.get('api/beer/:id', controllers.beer.show);
-// app.post();
+app.get('/api/beer/:_id', controllers.beer.show);
+app.post('api/beer', controllers.beer.create);
+app.delete('api/beer/:_id', controllers.beer.destroy);
 
 
 //location routes
 app.get('/api/location', controllers.location.index);
-app.get('api/location/:id', controllers.location.show)
-// app.post();
+app.get('/api/location/:_id', controllers.location.show)
+app.post('api/location', controllers.location.create);
+app.delete('api/location/:_id', controllers.location.destroy);
+
+//relationship routes
 
 /**********
  * SERVER *
