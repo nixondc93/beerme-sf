@@ -83,4 +83,3 @@ Beer.remove({}, function goodByeBeerss(err, succ) {
 		});
 	});
 });
->>>>>>> 43f569de8d9fc72b9ca450179ba9a35c6a599a7f
