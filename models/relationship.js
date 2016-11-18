@@ -3,14 +3,17 @@ var Schema = mongoose.Schema;
 var Beer = require('./beer');
 var Location = require('./location');
 
+
+
+
 var RelationshipSchema = new Schema({
 
 	_beer: {
-		type: Schema.types.ObjectId,
+		type: Schema.Types.ObjectId,
 		ref: "Beer"
 	},
 	_location: {
-		type: Schema.types.ObjectId,
+		type: Schema.Types.ObjectId,
 		ref: "Location"
 	},
 

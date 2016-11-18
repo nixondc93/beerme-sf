@@ -31,10 +31,16 @@ app.get('/', function homepage (req, res) {
 /*
  * JSON API Endpoints
  */
-
-// app.get();
-// app.get();
+ 
+ //beer routes
+app.get('/api/beer', controllers.beer.index);
+app.get('api/beer/:id', controllers.beer.show);
 // app.post();
+
+
+//location routes
+app.get('/api/location', controllers.location.index);
+app.get('api/location/:id', controllers.location.show)
 // app.post();
 
 /**********

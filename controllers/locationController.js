@@ -4,7 +4,12 @@ var db = require('../models');
 
 
 function index(req, res) {
-
+  db.Location.find(function (err, allLocations){
+    if(err){
+      console.error(err);
+    }
+    res.json(allLocations);
+  });
 }
 
 function create(req, res) {
@@ -13,7 +18,13 @@ function create(req, res) {
 }
 
 function show(req, res) {
-
+  db.findOne({_id: req.params.id}, function(err, oneLocation){
+    if(err){
+      console.error(err);
+    }
+    console.log(oneLocation)
+    res.json(oneLocation);
+  });
 }
 
 function destroy(req, res) {
