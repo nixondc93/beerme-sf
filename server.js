@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 var controllers = require('./controllers');
-
+var http = require("http");
 
 /**********
  * ROUTES *
@@ -31,6 +31,39 @@ app.get('/', function homepage (req, res) {
 /*
  * JSON API Endpoints
  */
+
+app.get('/search', function getbeers (req, res) {
+  var name = req.query.q;
+  console.log("In Req.query: ", name);
+  // console.log(req.prams);
+  url = "http://api.brewerydb.com/v2/search?key=&q=" + name + "&type=beer";
+  console.log(url);
+  var request = http.get(url, function (response) {
+    // data is streamed in chunks from the server
+    //console.log(response)
+    // so we have to handle the "data" event
+    var buffer = "",
+        data,
+        route;
+
+    response.on("data", function (chunk) {
+        buffer += chunk;
+    });
+
+    response.on("end", function (err) {
+
+        console.log(buffer);
+        console.log("\n");
+        data = JSON.parse(buffer);
+
+        res.send({data: data});
+
+    });
+
+});
+
+});
+
 
  //beer routes
 app.get('/api/beer', controllers.beer.index);

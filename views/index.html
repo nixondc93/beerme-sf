@@ -32,7 +32,7 @@
         </form>
       </div>
       <div class="center col l3">
-        <a class="add-beer" href="#">Add Beer</a>
+        <!-- <a class="add-beer" href="#beerModal">Add Beer</a> -->
       </div>
       <div class="col s2">
         <ul class="right">
@@ -109,14 +109,26 @@
             </div>
           </div>
       </div>
-      <div id="beerModal" class="modal">
+      <!-- <div id="beerModal" class="modal">
         <div class="modal-content">
           <h4>Add a Beer!</h4>
           <p>A bunch of text</p>
         </div>
         <div class="modal-footer">
           <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div> -->
+
+        <div class="row">
+    <form id="adding_beer" class="col s12" method="GET" action="/search">
+      <div class="row">
+        <div id="autocomplete-input" class="input-field col s12 autocomplete">
+          <input for="autocomplete-input" placeholder="Beer Name" id="beer_name" name="q" type="text" class="validate">
+          <label for="beer_name">Beer Name</label>
+          <input type="submit" name="name" value="submit" class="btn">
         </div>
+      </div>
+    </form>
+  </div>
 </body>
 
 </html>

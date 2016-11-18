@@ -9,6 +9,27 @@ $(document).ready(function(){
   //  });
 
   $.ajax({
+    method: 'GET',
+    url: '/search/',
+    success: getBeerApiSucc,
+    error: getBeerApiErr
+  });
+
+
+  // $('#adding_beer').on('submit', function(e){
+  //   e.preventDefault();
+  //   data = $('#beer_name').serialize();
+  //   console.log(data);
+  //   $.ajax({
+  //     method: 'GET',
+  //     data: data,
+  //     url: '/search',
+  //     success: getBeerApiSucc,
+  //     error: getBeerApiErr
+  //   });
+  // })
+
+  $.ajax({
 			method: 'GET',
 			url: '/api/beer',
 			success: getBeersSucc,
@@ -21,6 +42,13 @@ $(document).ready(function(){
         error: getlocationsErr
       });
 
+      $('.autocomplete').autocomplete({
+    data: {
+      "Apple": null,
+      "Microsoft": null,
+      "Google": 'http://placehold.it/250x250'
+    }
+  });
 
 
 });///////////end of document.ready ////////////////////////
@@ -48,11 +76,24 @@ function getlocationsSucc(json){
   });
 }
 
+////////////getBeerApiErr
+function getBeerApiErr(err){
+  if(err){
+    console.error(err);
+  }
+}
+
+////////////getBeerApiSucc
+function getBeerApiSucc(json){
+  console.log(json);
+
+}
+
 
 
 ///////////hb template rendering/////////////
  function render(json, html, target) {
-   console.log('rendering', json);
+  //  console.log('rendering', json);
    var hbTemplate = Handlebars.compile(html.html());
    var htmlData = hbTemplate(json);
    target.prepend(htmlData);
