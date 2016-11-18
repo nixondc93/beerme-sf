@@ -70,17 +70,17 @@
                   <div class="card-content">
                     <ul>
                       <li>
-                        <h6>{{name}}</h6>
+                        <p><b>Name: </b>{{name}}</p>
                       </li>
-                        {{description}}
+                        <p><b>Description: </b>{{description}}</p>
                       <li>
-                        {{rating}}
-                      </li>
-                      <li>
-                        {{Brewery}}
+                        <p><b>Rating: </b>{{rating}}</p>
                       </li>
                       <li>
-                        {{abv}}
+                        <p><b>Brewery: </b>{{Brewery}}<p>
+                      </li>
+                      <li>
+                        <p><b>ABV: </b>{{abv}}</p>
                       </li>
                     </ul>
                   </div>
@@ -89,24 +89,30 @@
         </script>
 
           <div class="col l3">
-              <div id="aside">
-                <h6 class="aside-title">Top Locations</h6>
+            <div id="aside" >
+              <h6 class="aside-title">Top Locations</h6>
+              <div class="location-target">
+              <script id="location-template" type="text/x-handlebars-template">
                   <div class="card">
                       <div class="card-content">
-                          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                        <ul>
+                          <li>
+                            <p><b>Name: </b> {{Name}} </p>
+                          </li>
+                          <li>
+                      		  <p><b>Type: </b> {{TypeOf}}
+                          </li>
+                          <li>
+                      		  <p><b>Address: </b> {{Address}}
+                          <li>
+                      		  <p><b>Phone: </b> {{phone}}
+                          </li>
+                        </ul>
                       </div>
                   </div>
-                  <div class="card">
-                      <div class="card-content">
-                          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                      </div>
-                  </div>
-                  <div class="card">
-                      <div class="card-content">
-                          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                      </div>
-                  </div>
+                  </script>
               </div>
+            </div>
           </div>
       </div>
     </div>
