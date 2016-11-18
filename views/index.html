@@ -7,6 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" media="screen" title="no title">
     <script src="scripts/app.js"></script>
 
@@ -57,9 +58,11 @@
     </nav>
 
     <div class="container">
+      <h5 class="main-title"> Top Beers </h5>
       <div id="beers" class="row">
+
         <script id="beer-template" type="text/x-handlebars-template">
-        <h5 class="main-title"> Top Beers </h5>
+
           <div class="col l9">
 
 
@@ -67,26 +70,23 @@
                   <div class="card-content">
                     <ul>
                       <li>
-                        <h6>{{}}</h6>
+                        <h6>{{name}}</h6>
                       </li>
-                        {{}}
+                        {{description}}
                       <li>
-                        {{}}
-                      </li>
-                      <li>
-                        {{}}
+                        {{rating}}
                       </li>
                       <li>
-                        {{}}
+                        {{Brewery}}
                       </li>
                       <li>
-                        {{}}
+                        {{abv}}
                       </li>
                     </ul>
                   </div>
               </div>
           </div>
-
+        </script>
 
           <div class="col l3">
               <div id="aside">

@@ -6,19 +6,22 @@ var db = require('./models'),
 
 var beers = [
 	{
-		description: "PBR",
+    name: "PBR",
+		description: "Pabst Blue Ribbon Pliny The Elder lad;fj;adlsfj ;lakdfjsl;kadsfj;dlksfj ;adlsfjkkldsjfl ;asdfjldjasf kl;dsajfldsjf kdsafjlkjdfs ladfsj;dfjk dajskf; adjfk akjsdf ljdaf ;jad; fas ;;alkdfjs ;aldskfj;fjad ;sdsaf",
 		rating: 10,
 		Brewery: "PBR Brewing",
 		abv: "4.5"
   },
 	{
-		description: "Schlitz",
+    name: "Schlitz",
+		description: "Schlitz Pliny The Elder lad;fj;adlsfj ;lakdfjsl;kadsfj;dlksfj ;adlsfjkkldsjfl ;asdfjldjasf kl;dsajfldsjf kdsafjlkjdfs ladfsj;dfjk dajskf; adjfk akjsdf ljdaf ;jad; fas ;;alkdfjs ;aldskfj;fjad ;sdsaf",
 		rating: 2,
 		Brewery: "God Awful Brewing, Co.",
 		abv: "6.5"
   },
 	{
-		description: "Pliny The Elder",
+    name: "Pliny The Elder",
+		description: "Pliny The Elder lad;fj;adlsfj ;lakdfjsl;kadsfj;dlksfj ;adlsfjkkldsjfl ;asdfjldjasf kl;dsajfldsjf kdsafjlkjdfs ladfsj;dfjk dajskf; adjfk akjsdf ljdaf ;jad; fas ;;alkdfjs ;aldskfj;fjad ;sdsaf",
 		rating: 99,
 		Brewery: "Russian River Brewing Company",
 		abv: "8.0"
