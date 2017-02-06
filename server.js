@@ -5,6 +5,7 @@ var express = require('express');
 // generate a new express app and call it 'app'
 var app = express();
 var bodyParser = require('body-parser');
+var db = require('./models');
 
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
@@ -34,14 +35,12 @@ app.get('/', function homepage (req, res) {
 
 app.get('/search', function getbeers (req, res) {
   var name = req.query.q;
-  console.log("In Req.query: ", name);
-  // console.log(req.prams);
-  url = "http://api.brewerydb.com/v2/search?key=&q=" + name + "&type=beer";
-  console.log(url);
+
+
+  url = "http://api.brewerydb.com/v2/search?key=" + name + "&type=beer";
+
   var request = http.get(url, function (response) {
-    // data is streamed in chunks from the server
-    //console.log(response)
-    // so we have to handle the "data" event
+
     var buffer = "",
         data,
         route;
@@ -56,9 +55,37 @@ app.get('/search', function getbeers (req, res) {
         console.log("\n");
         data = JSON.parse(buffer);
 
-        res.send({data: data});
+        res.send(data);
 
+        console.log("this is data1", data);
+
+        // FIRST, test that you have all CRUD working
+
+        // iterate over everything with the iterator pulling out your desired parameters, if those given properties exist, push into beer.arr, then RENDER the ENTIRE new array
+
+        // beerarr = [];
+        // data.forEach(function(ele, arr){
+        //   var beerObj = {
+        //     name: ele.shortName,
+        //     description: ele.description,
+        //     abv: ele.abv
+        //   }
+        //   beerarr.push(beerObj);
+        //
+        // });
+
+        ////////
+        // res.send({data: beerarr});
+        // db.Beer.create(beerarr, function(err, beerData){
+        //   if(err){
+        //     console.error(err);
+        //   }
+        //
+        //   console.log("This is beerData", beerData);
+        //   res.json(beerData);
+        // });
     });
+
 
 });
 

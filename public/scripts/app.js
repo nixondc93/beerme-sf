@@ -8,26 +8,26 @@ $(document).ready(function(){
   //   });
   //  });
 
-  $.ajax({
-    method: 'GET',
-    url: '/search/',
-    success: getBeerApiSucc,
-    error: getBeerApiErr
+  // $.ajax({
+  //   method: 'GET',
+  //   url: '/search/',
+  //   success: getBeerApiSucc,
+  //   error: getBeerApiErr
+  // });
+
+
+  $('#adding_beer').on('submit', function(e){
+    e.preventDefault();
+    data = $('#beer_name').serialize();
+    console.log(data);
+    $.ajax({
+      method: 'GET',
+      data: data,
+      url: '/search',
+      success: getBeerApiSucc,
+      error: getBeerApiErr
+    });
   });
-
-
-  // $('#adding_beer').on('submit', function(e){
-  //   e.preventDefault();
-  //   data = $('#beer_name').serialize();
-  //   console.log(data);
-  //   $.ajax({
-  //     method: 'GET',
-  //     data: data,
-  //     url: '/search',
-  //     success: getBeerApiSucc,
-  //     error: getBeerApiErr
-  //   });
-  // })
 
   $.ajax({
 			method: 'GET',
@@ -85,9 +85,33 @@ function getBeerApiErr(err){
 
 ////////////getBeerApiSucc
 function getBeerApiSucc(json){
-  console.log(json);
 
+
+
+
+  
+//   var data = json.data;
+//   $.ajax({
+//     method: 'POST',
+//     data: data,
+//     url: '/api/beer',
+//     success: wtfSucc,
+//     error: wtfErr
+//   });
+// }
+//
+// function wtfErr(err){
+//   if(err){
+//     console.error(err);
+//   }
+// }
+//
+// function wtfSucc(json){
+//   console.log(json)
+//
 }
+
+
 
 
 

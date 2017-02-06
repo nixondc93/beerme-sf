@@ -22,11 +22,11 @@
             <div class="row">
                 <div class="col l3">
                     <h4>BeerMe<h4>
-      </div>
-      <div class="center col l6">
-        <form>
+                </div>
+      <div class=" col l6">
+        <form id="adding_beer" class="col s12 grey lighten-2" method="GET" action="/search">
           <div class="input-field">
-            <input id="search" type="search" />
+            <input for="autocomplete-input" id="beer_name" name="q" type="text" class="validate" />
             <label class="search-icon" for="search"><i class="material-icons ">search</i></label>
           </div>
         </form>
@@ -66,9 +66,8 @@
                       <li>
                         <p><b>Name: </b>{{name}}</p>
                       </li>
-                        <p><b>Description: </b>{{description}}</p>
                       <li>
-                        <p><b>Rating: </b>{{rating}}</p>
+                        <p><b>Description: </b>{{description}}</p>
                       </li>
                       <li>
                         <p><b>Brewery: </b>{{Brewery}}<p>
@@ -82,6 +81,7 @@
           </div>
         </script>
       </div>
+
           <div class="col l3">
             <div id="aside" >
               <h6 class="aside-title">Top Locations</h6>
@@ -109,16 +109,7 @@
             </div>
           </div>
       </div>
-      <!-- <div id="beerModal" class="modal">
-        <div class="modal-content">
-          <h4>Add a Beer!</h4>
-          <p>A bunch of text</p>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-        </div> -->
-
-        <div class="row">
+  <div class="row">
     <form id="adding_beer" class="col s12" method="GET" action="/search">
       <div class="row">
         <div id="autocomplete-input" class="input-field col s12 autocomplete">
